@@ -10,8 +10,7 @@ const ItemSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true,
-    min: 3,
-    max: 30,
+    min: 0,
   },
 
   description: {

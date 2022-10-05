@@ -30,7 +30,7 @@ router.get("/getItemById/:id", async (req, res) => {
 
 router.post("/saveItems", async (req, res) => {
   const { error } = ItemSchema.validate(req.body);
-  if (error) return res.send(error);
+  if (error) return res.status(400).send(error.details[0].message);
   const ItemData = new Items({
     name: req.body.name,
     price: req.body.price,
